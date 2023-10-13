@@ -93,6 +93,9 @@ public class Peripheral: NSObject, CBPeripheralDelegate {
     var discoveredServices = [CBUUID : [Service]]()
 
     let cbPeripheral: CBPeripheralInjectable
+    public func getCBPeripheral() -> CBPeripheral? {
+        return self.cbPeripheral as? CBPeripheral
+    }
     
     public private(set) var advertisements: PeripheralAdvertisements
     public let discoveredAt = Date()
